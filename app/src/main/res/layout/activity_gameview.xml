@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_game"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/black"
+    tools:context="com.vsoftcoders.sum.activity.GamePlayActivity">
+
+    <com.vsoftcoders.sum.view.GameView
+        android:id="@+id/gameView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnSetting"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/ic_settings"
+            android:onClick="settingPopup" />
+
+        <TextView
+            android:id="@+id/txtScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Score:"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnCrown"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/coin"
+            android:onClick="settingPopup" />
+
+        <TextView
+            android:id="@+id/txtCoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:ems="5"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:layout_below="@id/btnCrown"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_90sdp"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:id="@+id/btnRestore"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_restore"
+           />
+    </RelativeLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/BANNER_ADMOB_APP_ID">
+    </com.google.android.gms.ads.AdView>
+
+    <TextView
+        android:id="@+id/txtCounter"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_40sdp"
+        android:text="10"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_50sdp"
+        />
+
+</RelativeLayout>

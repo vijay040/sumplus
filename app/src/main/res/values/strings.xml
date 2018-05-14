@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Sum+</string>
+    <string name="help">\?</string>
+    <string name="BANNER_ADMOB_APP_ID">ca-app-pub-7517176815914185/9468508441</string>
+    <string name="FULL_ADMOB_APP_ID">ca-app-pub-7517176815914185/9384747968</string>
+    <string name="ADMOB_APP_ID">ca-app-pub-7517176815914185~5751790566</string>
+    <string name="TEST_ADMOB_APP_ID">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="version_update_msg">New Update Available ! \\n Please Update Now.</string>
+
+</resources>
