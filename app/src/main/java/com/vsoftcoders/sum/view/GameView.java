@@ -241,8 +241,6 @@ public class GameView extends View implements View.OnTouchListener {
         }
         if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
             //AudioPlayer.playGameOverSound();
-            if(timer!=null)
-            timer.cancel();
             startCount();
             int mX = (int) motionEvent.getX() - objWidth / 2;
             int mY = (int) motionEvent.getY() - objWidth / 2;
@@ -415,7 +413,16 @@ public class GameView extends View implements View.OnTouchListener {
    public static Timer timer;
 
     public void startCount() {
-        count = 0;
+        if (count > 0 && pointList.size()==0 )
+            return;
+
+        if (timer != null) {
+            timer.cancel();
+        }
+        if (pointList.size() > 1) {
+            count = 0;
+        }
+
         ((GamePlayActivity) context).txtCounter.setVisibility(VISIBLE);
         timer = new Timer();
         counterTask = new TimerTask() {
@@ -431,11 +438,11 @@ public class GameView extends View implements View.OnTouchListener {
                                 ((GamePlayActivity) context).txtCounter.setText("" + (targetCount - count));
                         }
                         if (count >= targetCount) {
-                            count=0;
+                            count = 0;
                             Intent i = new Intent(((GamePlayActivity) context), GameOverActivity.class);
                             ((GamePlayActivity) context).startActivity(i);
                             timer.cancel();
-                            ((GamePlayActivity) context). mInterstitialAd.show();
+                            ((GamePlayActivity) context).mInterstitialAd.show();
                             ((GamePlayActivity) context).finish();
                         }
                     }

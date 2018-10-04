@@ -45,6 +45,7 @@ public class AudioPlayer {
     }
 
     public static void stopBackground() {
+        if(mBackground!=null)
         mBackground.pause();
     }
 
